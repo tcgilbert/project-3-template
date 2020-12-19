@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Profile = (props) => {
-    console.log(props);
     const userData = props.user ? 
     (<div>
         <h1>Profile</h1>
