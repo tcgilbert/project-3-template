@@ -8,11 +8,10 @@ import './App.css';
 // Components
 import Welcome from './components/Welcome';
 import Navbar from './components/Navbar';
-import Footer from './components/Footer';
 import Profile from './components/Profile';
 import Signup from './components/Signup';
 import Login from './components/Login';
-import About from './components/About';
+
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const user = localStorage.getItem('jwtToken');
@@ -61,12 +60,12 @@ function App() {
           <Route 
             path='/login' 
             render={ (props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser}/>} />
-          <Route path='/about' component={ About } />
+
           <PrivateRoute path="/profile" component={ Profile } user={currentUser}/>
           <Route exact path="/" component={ Welcome }/>
         </Switch>
       </div>
-      <Footer />
+
     </div>
   );
 }
